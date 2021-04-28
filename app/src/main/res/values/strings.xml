@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StartApp-Android</string>
+    <string name="emprendedor">Emprendedor</string>
+    <string name="inversionista">Inversionista</string>
+</resources>
