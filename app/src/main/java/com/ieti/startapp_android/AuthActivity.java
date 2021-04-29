@@ -34,9 +34,10 @@ public class AuthActivity extends AppCompatActivity {
         if (email.getText().toString().isEmpty()) {
             password.setError("Password cannot be empty");
         }else{
-            mAuth.signInWithEmailAndPassword(email.toString(), password.toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+
                     if (task.isSuccessful()) {
                         redirectHomeActivity(email.toString());
                     } else {
@@ -46,6 +47,10 @@ public class AuthActivity extends AppCompatActivity {
             });
         }
 
+    }
+    public  void goToRegister(View view){
+        Intent intent =new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
     private void showAlert(View view){
         Snackbar mySnackbar = Snackbar.make(view, "Credeciales incorrectas", Snackbar.LENGTH_LONG);

@@ -38,16 +38,20 @@ public class RegisterActivity extends AppCompatActivity {
         if (!(investor.isChecked() || entrepreneur.isChecked())){
             investor.setError("Selecionar uno de los dos roles");
         } else{
-            mAuth.signInWithEmailAndPassword(email.toString(), password.toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString().trim()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    System.out.println(task.isSuccessful());
                     if (task.isSuccessful()) {
+                        System.out.println("registrado");
                         if(investor.isChecked()){
                             redirectHomeActivity(email.toString(), "INVESTOR");
                         }else{
                             redirectHomeActivity(email.toString(), "ENTREPRENEUR");
                         }
                     } else {
+                        System.out.println(task.getException());
+                        System.out.println( "fake");
                         showAlert(view);
                     }
                 }
@@ -55,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
     private void showAlert(View view){
-        Snackbar mySnackbar = Snackbar.make(view, "Credeciales incorrectas", Snackbar.LENGTH_LONG);
+        Snackbar mySnackbar = Snackbar.make(view, "Fallo al registrarse intente mas tarde.", Snackbar.LENGTH_LONG);
         mySnackbar.show();
     }
     private void redirectHomeActivity(String email, String role){
