@@ -1,4 +1,4 @@
-package com.ieti.startapp_android;
+package com.ieti.startapp_android.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +13,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.ieti.startapp_android.R;
 
 public class AuthActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    public static final String EXTRA_MESSAGE = "com.ieti.startapp.MESSAGE";
+    public static final String EXTRA_EMAIL = "com.ieti.startapp_android.Email";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class AuthActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if (task.isSuccessful()) {
-                        redirectHomeActivity(email.toString());
+                        redirectHomeActivity(email.getText().toString());
                     } else {
                         showAlert(view);
                     }
@@ -59,7 +60,7 @@ public class AuthActivity extends AppCompatActivity {
 
     private void redirectHomeActivity(String email){
         Intent intent =new Intent(this, HomeActivity.class);
-        intent.putExtra("Email", email);
+        intent.putExtra(EXTRA_EMAIL, email);
         startActivity(intent);
     }
 }
