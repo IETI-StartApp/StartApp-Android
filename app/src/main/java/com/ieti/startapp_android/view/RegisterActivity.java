@@ -1,4 +1,4 @@
-package com.ieti.startapp_android;
+package com.ieti.startapp_android.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.ieti.startapp_android.R;
 
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -63,9 +64,9 @@ public class RegisterActivity extends AppCompatActivity {
         mySnackbar.show();
     }
     private void redirectHomeActivity(String email, String role){
+        //falta agregar el usurio en la base de datos.
         Intent intent =new Intent(this, HomeActivity.class);
         intent.putExtra("Email", email);
-        intent.putExtra("Role", role);
         startActivity(intent);
     }
 }
