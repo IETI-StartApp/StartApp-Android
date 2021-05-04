@@ -10,8 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ieti.startapp_android.R;
+import com.ieti.startapp_android.cardProjectElement;
 import com.ieti.startapp_android.view.card.GridAdapter;
-import com.ieti.startapp_android.view.card.cardProjectElement;
+
 
 import org.w3c.dom.ls.LSInput;
 
