@@ -12,30 +12,31 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ieti.startapp_android.R;
+import com.ieti.startapp_android.cardProjectElement;
 
 
 import java.util.List;
 
-public class ListAdapter extends RecyclerView.Adapter<androidx.recyclerview.widget.ListAdapter.ViewHolder> {
+public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
     private List<cardProjectElement> projects;
     private LayoutInflater mInflater;
     private Context context;
 
-    public ListAdapter(List<cardProjectElement> projects, LayoutInflater mInflater, Context context) {
+    public GridAdapter(List<cardProjectElement> projects, Context context) {
         this.projects = projects;
-        this.mInflater = mInflater;
+        this.mInflater = LayoutInflater.from(context);
         this.context = context;
     }
 
     @NonNull
     @Override
-    public androidx.recyclerview.widget.ListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.card_project_element, null);
-        return new androidx.recyclerview.widget.ListAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull androidx.recyclerview.widget.ListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bindData(projects.get(position));
     }
 
