@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ieti.startapp_android.R;
-import com.ieti.startapp_android.cardProjectElement;
 
 
 import java.util.List;
