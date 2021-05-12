@@ -1,4 +1,4 @@
-package com.ieti.startapp_android;
+package com.ieti.startapp_android.view.card;
 
 public class cardProjectElement {
     private String userOwnProject;
@@ -8,8 +8,10 @@ public class cardProjectElement {
     private String financeProject;
     private String progressProject;
     private String investorProject;
+    private String projectImage;
+    private String userImage;
 
-    public cardProjectElement(String userOwnProject, String dateProject, String projectName, String goalProject, String financeProject, String progressProject, String investorProject) {
+    public cardProjectElement(String userOwnProject, String dateProject, String projectName, String goalProject, String financeProject, String progressProject, String investorProject, String projectImage, String userImage) {
         this.userOwnProject = userOwnProject;
         this.dateProject = dateProject;
         this.projectName = projectName;
@@ -17,6 +19,8 @@ public class cardProjectElement {
         this.financeProject = financeProject;
         this.progressProject = progressProject;
         this.investorProject = investorProject;
+        this.projectImage = projectImage;
+        this.userImage = userImage;
     }
 
     public String getUserOwnProject() {
@@ -73,5 +77,21 @@ public class cardProjectElement {
 
     public void setInvestorProject(String investorProject) {
         this.investorProject = investorProject;
+    }
+
+    public String getProjectImage() {
+        return projectImage;
+    }
+
+    public void setProjectImage(String projectImage) {
+        this.projectImage = projectImage;
+    }
+
+    public String getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
     }
 }
