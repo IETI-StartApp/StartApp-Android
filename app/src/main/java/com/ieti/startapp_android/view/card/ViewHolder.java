@@ -32,9 +32,9 @@ public class ViewHolder extends  RecyclerView.ViewHolder{
             userName.setText(card.getUserOwnProject());
             dateProject.setText(card.getDateProject());
             projectName.setText(card.getProjectName());
-            goalProject.setText(card.getGoalProject());
-            financeProject.setText(card.getFinanceProject());
-            progressProject.setText(card.getProgressProject());
-            investorProject.setText(card.getInvestorProject());
+            goalProject.setText("$ "+card.getGoalProject());
+            financeProject.setText("$ "+card.getFinanceProject());
+            progressProject.setText(card.getProgressProject()+"%");
+            investorProject.setText("$ "+card.getInvestorProject());
         }
 }
