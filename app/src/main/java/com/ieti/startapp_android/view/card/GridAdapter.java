@@ -37,6 +37,7 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bindData(projects.get(position));
+        holder.setEvents(holder);
     }
 
     @Override

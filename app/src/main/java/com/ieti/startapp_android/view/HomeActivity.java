@@ -18,10 +18,8 @@ import com.ieti.startapp_android.network.RetrofitNetwork;
 import com.ieti.startapp_android.view.card.GridAdapter;
 
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -83,7 +81,8 @@ public class HomeActivity extends AppCompatActivity {
             }else{
                 name = "no Disponible";
             }
-            cardProjectElements.add(new cardProjectElement(name, finance.getStartDate().toString(), project.getName(), Long.toString(finance.getValuation()), Long.toString(finance.getValue()), progress, Integer.toString(finance.getInvestorNumber()), project.getImage(), ""));
+
+            cardProjectElements.add(new cardProjectElement(project.getId()," "+name, " "+new SimpleDateFormat("dd-MM-yyyy").format(finance.getStartDate()), project.getName(), Long.toString(finance.getValuation()), Long.toString(finance.getValue()), progress, Integer.toString(finance.getInvestorNumber()), project.getImage(), ""));
         }
 //        cardProjectElements.add(new cardProjectElement("prueba", "10/8/2020", "Pruebita mela", "1000000", "2000", "50%", "2"));
 //        cardProjectElements.add(new cardProjectElement("hola", "10/8/2020", "Pruebita mela", "1000000", "2000", "50%", "2"));

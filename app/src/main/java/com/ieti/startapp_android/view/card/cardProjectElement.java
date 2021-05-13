@@ -9,9 +9,9 @@ public class cardProjectElement {
     private String progressProject;
     private String investorProject;
     private String projectImage;
-    private String userImage;
+    private String userImage, id;
 
-    public cardProjectElement(String userOwnProject, String dateProject, String projectName, String goalProject, String financeProject, String progressProject, String investorProject, String projectImage, String userImage) {
+    public cardProjectElement(String id, String userOwnProject, String dateProject, String projectName, String goalProject, String financeProject, String progressProject, String investorProject, String projectImage, String userImage) {
         this.userOwnProject = userOwnProject;
         this.dateProject = dateProject;
         this.projectName = projectName;
@@ -21,6 +21,15 @@ public class cardProjectElement {
         this.investorProject = investorProject;
         this.projectImage = projectImage;
         this.userImage = userImage;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUserOwnProject() {
